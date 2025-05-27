@@ -636,76 +636,276 @@ form .btn {
   background-color: #2980b9;
 }
 
-/* Footer */
+/* Enhanced Footer Styles */
 footer {
-  background-color: #2c3e50;
-  color: white;
-  padding: 60px 0 20px;
+  background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+  color: #ecf0f1;
+  padding: 80px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71, #e74c3c, #f39c12);
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-section {
+  position: relative;
 }
 
 .footer-section h3 {
-  color: white;
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 2px;
 }
 
 .footer-section h3 span {
-  color: #0099ff;
+  color: #3498db;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
 }
 
 .footer-section p {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #bdc3c7;
+  font-size: 15px;
 }
 
+.footer-section ul li {
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li:hover {
+  transform: translateX(5px);
+}
+
+.footer-section ul li a {
+  color: #bdc3c7;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.footer-section ul li a:hover {
+  color: #3498db;
+  text-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+.footer-section ul li a::before {
+  content: '▶';
+  margin-right: 10px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover::before {
+  opacity: 1;
+  color: #3498db;
+}
+
+.footer-section i {
+  margin-right: 12px;
+  color: #3498db;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Enhanced Social Icons */
 .social-icons {
   display: flex;
   gap: 15px;
+  margin-top: 25px;
 }
 
 .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: white;
-  transition: background-color 0.3s;
+  color: #bdc3c7;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-icons a:hover::before {
+  left: 100%;
 }
 
 .social-icons a:hover {
-  background-color: #3498db;
+  transform: translateY(-3px) scale(1.1);
+  border-color: #3498db;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  color: #ffffff;
 }
 
-.footer-section ul li {
-  margin-bottom: 10px;
+.social-icons a:nth-child(1):hover {
+  background: linear-gradient(135deg, #3b5998, #8b9dc3);
 }
 
-.footer-section ul li a {
-  color: #bdc3c7;
-  transition: color 0.3s;
+.social-icons a:nth-child(2):hover {
+  background: linear-gradient(135deg, #1da1f2, #0084b4);
 }
 
-.footer-section ul li a:hover {
+.social-icons a:nth-child(3):hover {
+  background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
+}
+
+.social-icons a:nth-child(4):hover {
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+
+/* Enhanced Contact Info */
+.footer-section .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.footer-section .contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.footer-section .contact-item i {
+  font-size: 18px;
+  margin-right: 15px;
   color: #3498db;
+  width: 25px;
 }
 
-.footer-section i {
-  margin-right: 10px;
-  color: #047fd1;
-}
-
+/* Enhanced Footer Bottom */
 .footer-bottom {
+  background: rgba(0, 0, 0, 0.3);
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #95a5a6;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.footer-bottom .heart {
+  color: #e74c3c;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Responsive Footer Styles */
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 0 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .footer-section .contact-item {
+    justify-content: center;
+    text-align: left;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section h3 {
+    font-size: 20px;
+  }
+  
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .footer-content {
+    gap: 30px;
+  }
 }
 
 /* Responsive Styles */
@@ -839,18 +1039,18 @@ footer {
     </div>
   </section>
 
-  <!-- Footer (include on all pages) -->
+  <!-- Enhanced Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <h3>Prestige<span>Estates</span></h3>
-          <p>Your trusted partner in finding the perfect property.</p>
+          <p>Your trusted partner in finding the perfect property. We combine years of experience with cutting-edge technology to deliver exceptional real estate services.</p>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="footer-section">
@@ -864,14 +1064,23 @@ footer {
           </ul>
         </div>
         <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, City, State</p>
-          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-          <p><i class="fas fa-envelope"></i> info@prestigeestates.com</p>
+          <h3>Contact Info</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Real Estate Ave, City, State 12345</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>(123) 456-7890</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@prestigeestates.com</span>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2023 PrestigeEstates. All rights reserved.</p>
+        <p>&copy; 2025 PrestigeEstates. All rights reserved. Made with <span class="heart">♥</span> from group 10.</p>
       </div>
     </div>
   </footer>
